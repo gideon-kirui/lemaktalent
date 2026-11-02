@@ -54,7 +54,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:va
 .nv{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}.lg{background:#fff;border-radius:10px;padding:5px 10px;display:block}.lg img{height:40px;width:auto}
 nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;padding:8px 12px;border-radius:8px}nav a:hover{background:var(--navy2);color:var(--gold)}
 .tg{flex:none;width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:.2s}.tg:hover{background:var(--navy2);border-color:var(--gold);color:var(--gold)}.rt{display:flex;align-items:center;gap:10px}
-.bg{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+.bg{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}.bg .si{width:28px;height:28px}
 .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(11,42,74,.94) 8%,rgba(11,42,74,.72) 48%,rgba(11,42,74,.25))}
 .hi{position:relative;z-index:2;padding:110px 0 150px;max-width:700px}.hero h1{color:#fff;font-size:clamp(2.1rem,5.4vw,3.8rem);font-weight:700}.hero h1 em{font-style:normal;color:var(--gold)}
@@ -86,6 +86,7 @@ input:focus,textarea:focus,a:focus-visible,button:focus-visible,summary:focus-vi
 .cta{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;text-align:center;padding:70px 0}.cta h2{color:#fff}.cta h2::after{margin-inline:auto}.cta p{color:#dbe7f5;margin:16px auto 28px;max-width:56ch}
 footer{background:#071B31;color:#b9c9dc;padding:60px 0 24px;font-size:.9rem}footer h3{color:#fff;font-size:1rem;margin-bottom:14px}footer a{text-decoration:none}footer a:hover{color:var(--gold)}footer ul{list-style:none;margin:0;padding:0}footer li{margin:8px 0}
 .fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px}.fb{margin-top:40px;padding-top:20px;border-top:1px solid #1D3453;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.82rem}
+.si{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;display:block}.tg .si,.so .si{width:20px;height:20px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.cd{transition:none}}
 @media (max-width:960px){.bg{display:block}nav{position:absolute;left:0;right:0;top:72px;background:var(--navy);display:none;padding:10px 20px 20px}nav.open{display:block}nav ul{flex-direction:column}.rt>.btn{display:none}
@@ -94,10 +95,26 @@ footer{background:#071B31;color:#b9c9dc;padding:60px 0 24px;font-size:.9rem}foot
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+</defs></svg>
 <header><div class="w nv">
 <a class="lg" href="#top" aria-label="Lemak Talent Solutions home"><img src="images/logo.png" width="84" height="40" alt="Lemak Talent Solutions logo"></a>
 <nav id="nav" aria-label="Primary"><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#industries">Industries</a></li><li><a href="#process">Approach</a></li><li><a href="#why">Why Us</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-<div class="rt"><a class="btn b1" href="#contact">Get in touch</a><button class="tg" id="tg" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle light / dark theme">&#9790;</button><button class="bg" id="bg" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">&#9776;</button></div></div></header>
+<div class="rt"><a class="btn b1" href="#contact">Get in touch</a><button class="tg" id="tg" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle light / dark theme"><svg class="si" aria-hidden="true"><use href="#i-moon"/></svg></button><button class="bg" id="bg" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg class="si" aria-hidden="true"><use href="#i-menu"/></svg></button></div></div></header>
 <main id="top">
 <section class="hero" aria-labelledby="h1"><img src="images/hero.jpg" width="1500" height="1000" alt="Lemak Talent Solutions team discussing recruitment strategy in a Nairobi office" fetchpriority="high">
 <div class="w hi"><p class="eb">Recruitment &middot; HR &middot; Workforce Solutions</p><h1 id="h1">Connecting organisations with <em>exceptional people.</em></h1>
@@ -112,9 +129,9 @@ footer{background:#071B31;color:#b9c9dc;padding:60px 0 24px;font-size:.9rem}foot
 <p class="lead">Incorporated under the Companies Act, 2015 of Kenya, we comply with applicable Kenyan laws, regulations and professional requirements.</p></div>
 <div class="hx rv"><img src="images/about.jpg" width="900" height="600" alt="Recruiter interviewing a candidate beside a Lemak recruitment banner" loading="lazy"></div></div>
 <div class="mv">
-<article class="cd rv"><div class="ic">V</div><h3>Our Vision</h3><p>To become a trusted and leading talent solutions partner in Kenya and across Africa, recognised for connecting organisations with exceptional people and creating sustainable employment opportunities.</p></article>
-<article class="cd rv"><div class="ic">M</div><h3>Our Mission</h3><p>To provide professional, ethical and technology-enabled recruitment and human resource solutions that connect organisations with competent, reliable talent and help individuals build meaningful careers.</p></article>
-<article class="cd rv"><div class="ic">C</div><h3>Our Core Values</h3><ul class="vl"><li>Integrity</li><li>People-centred approach</li><li>Professionalism</li><li>Confidentiality</li><li>Innovation</li></ul></article></div></div></section>
+<article class="cd rv"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-eye"/></svg></div><h3>Our Vision</h3><p>To become a trusted and leading talent solutions partner in Kenya and across Africa, recognised for connecting organisations with exceptional people and creating sustainable employment opportunities.</p></article>
+<article class="cd rv"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-target"/></svg></div><h3>Our Mission</h3><p>To provide professional, ethical and technology-enabled recruitment and human resource solutions that connect organisations with competent, reliable talent and help individuals build meaningful careers.</p></article>
+<article class="cd rv"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-shield"/></svg></div><h3>Our Core Values</h3><ul class="vl"><li>Integrity</li><li>People-centred approach</li><li>Professionalism</li><li>Confidentiality</li><li>Innovation</li></ul></article></div></div></section>
 
 <section class="sec alt" id="services" aria-labelledby="sv"><div class="w c"><p class="eb">What we do</p><h2 id="sv">Recruitment, HR and workforce solutions</h2>
 <p class="lead">Comprehensive human resource and workforce solutions designed to help organisations attract, develop and retain the right talent while enhancing operational efficiency.</p></div>
@@ -157,11 +174,11 @@ footer{background:#071B31;color:#b9c9dc;padding:60px 0 24px;font-size:.9rem}foot
 <section class="sec alt" id="contact" aria-labelledby="ctt"><div class="w c"><p class="eb">Contact us</p><h2 id="ctt">Let&rsquo;s build your next great team</h2>
 <p class="lead">Tell us about the talent you need or the role you are looking for, and we will get back to you with a clear next step.</p></div>
 <div class="w ct"><address class="rv">
-<div class="ci"><div class="ic">&#9679;</div><div><strong>Visit us</strong><small>Nextgen Mall, 5th Floor, Room No. 38<br>Mombasa Road, Nairobi, Kenya</small></div></div>
-<div class="ci"><div class="ic">&#9742;</div><div><strong>Call us</strong><small><a href="tel:+254750176212">+254 727 292 547</a><br><a href="tel:+254703563072">+254 703 563 072</a></small></div></div>
-<div class="ci"><div class="ic">@</div><div><strong>Email</strong><small><a href="mailto:info@lemaktalent.com">info@lemaktalent.com</a></small></div></div>
-<div class="ci"><div class="ic">W</div><div><strong>Website</strong><small><a href="https://lemaktalent.com">lemaktalent.com</a></small></div></div>
-<div class="so" aria-label="Social media"><a href="https://www.linkedin.com/company/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on LinkedIn">in</a><a href="https://www.facebook.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on Facebook">f</a><a href="https://www.instagram.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on Instagram">ig</a><a href="https://x.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on X">X</a><a href="https://tiktok.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on Tiktok">T</a></div></address>
+<div class="ci"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-pin"/></svg></div><div><strong>Visit us</strong><small>Nextgen Mall, 5th Floor, Room No. 38<br>Mombasa Road, Nairobi, Kenya</small></div></div>
+<div class="ci"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-phone"/></svg></div><div><strong>Call us</strong><small><a href="tel:+254727292547">+254 727 292 547</a><br><a href="tel:+254703563072">+254 703 563 072</a></small></div></div>
+<div class="ci"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-mail"/></svg></div><div><strong>Email</strong><small><a href="mailto:info@lemaktalent.com">info@lemaktalent.com</a></small></div></div>
+<div class="ci"><div class="ic"><svg class="si" aria-hidden="true"><use href="#i-globe"/></svg></div><div><strong>Website</strong><small><a href="https://lemaktalent.com">lemaktalent.com</a></small></div></div>
+<div class="so" aria-label="Social media"><a href="https://www.linkedin.com/company/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on LinkedIn"><svg class="si" aria-hidden="true"><use href="#i-linkedin"/></svg></a><a href="https://www.facebook.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on Facebook"><svg class="si" aria-hidden="true"><use href="#i-facebook"/></svg></a><a href="https://www.instagram.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on Instagram"><svg class="si" aria-hidden="true"><use href="#i-instagram"/></svg></a><a href="https://x.com/lemaktalent" rel="noopener" target="_blank" aria-label="Lemak on X"><svg class="si" aria-hidden="true"><use href="#i-x"/></svg></a></div></address>
 <form id="f" class="rv" aria-label="Contact form"><div class="fr"><div><label for="n">Full name</label><input id="n" name="n" required autocomplete="name"></div><div><label for="e">Email address</label><input id="e" name="e" type="email" required autocomplete="email"></div></div>
 <label for="p">Phone number</label><input id="p" name="p" type="tel" autocomplete="tel"><label for="m">How can we help?</label><textarea id="m" name="m" rows="5" required></textarea>
 <button class="btn b3" type="submit">Send message</button></form></div></section>
@@ -171,7 +188,7 @@ footer{background:#071B31;color:#b9c9dc;padding:60px 0 24px;font-size:.9rem}foot
 <footer><div class="w"><div class="fg"><div><div class="lg" style="display:inline-block;margin-bottom:16px"><img src="images/logo.png" width="84" height="40" alt="Lemak Talent Solutions" loading="lazy"></div><p>Recruitment, HR consultancy, staff outsourcing, training, payroll and career support from Nairobi, Kenya.</p></div>
 <div><h3>Quick links</h3><ul><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#industries">Industries</a></li><li><a href="#process">Our approach</a></li></ul></div>
 <div><h3>Support</h3><ul><li><a href="#why">Why choose us</a></li><li><a href="#faq">FAQs</a></li><li><a href="#contact">Contact</a></li></ul></div>
-<div><h3>Get in touch</h3><ul><li><a href="mailto:info@lemaktalent.com">info@lemaktalent.com</a></li><li><a href="tel:+254750176212">+254 750 176 212</a> / <a href="tel:+254750176212">+254 727 292 547</a></li><li>Nextgen Mall, 5th Floor, Room 38, Mombasa Road, Nairobi</li></ul></div></div>
+<div><h3>Get in touch</h3><ul><li><a href="mailto:info@lemaktalent.com">info@lemaktalent.com</a></li><li><a href="tel:+254727292547">+254 727 292 547</a> / <a href="tel:+254703563072">+254 703 563 072</a></li><li>Nextgen Mall, 5th Floor, Room 38, Mombasa Road, Nairobi</li></ul></div></div>
 <div class="fb"><span>&copy; 2026 Lemak Talent Solutions Limited. All rights reserved.</span><span>Incorporated under the Companies Act, 2015 of Kenya</span></div></div></footer>
 <script>
 (function(){var b=document.getElementById("bg"),n=document.getElementById("nav");
@@ -180,7 +197,7 @@ n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.re
 var r=document.querySelectorAll(".rv");
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});r.forEach(function(x){io.observe(x)})}else{r.forEach(function(x){x.classList.add("in")})}
 var tg=document.getElementById("tg"),rt=document.documentElement,mt=document.querySelector('meta[name="theme-color"]');
-function ap(d){if(d)rt.setAttribute("data-theme","dark");else rt.removeAttribute("data-theme");tg.innerHTML=d?"&#9728;":"&#9790;";tg.setAttribute("aria-pressed",d);tg.setAttribute("aria-label",d?"Switch to light theme":"Switch to dark theme");if(mt)mt.setAttribute("content",d?"#071B31":"#0B2A4A")}
+function ap(d){if(d)rt.setAttribute("data-theme","dark");else rt.removeAttribute("data-theme");tg.innerHTML='<svg class="si" aria-hidden="true"><use href="#i-'+(d?"sun":"moon")+'"/></svg>';tg.setAttribute("aria-pressed",d);tg.setAttribute("aria-label",d?"Switch to light theme":"Switch to dark theme");if(mt)mt.setAttribute("content",d?"#071B31":"#0B2A4A")}
 ap(rt.getAttribute("data-theme")==="dark");
 tg.addEventListener("click",function(){var d=rt.getAttribute("data-theme")!=="dark";ap(d);try{localStorage.setItem("lemak-theme",d?"dark":"light")}catch(e){}});
 document.getElementById("f").addEventListener("submit",function(e){e.preventDefault();var f=e.target,s=encodeURIComponent("Enquiry from "+f.n.value),t=encodeURIComponent("Name: "+f.n.value+"\nEmail: "+f.e.value+"\nPhone: "+f.p.value+"\n\n"+f.m.value);window.location.href="mailto:info@lemaktalent.com?subject="+s+"&body="+t});
